@@ -1,9 +1,9 @@
 var context;
-// global variable coordinates for three balls
-// where initial x is start, y is finish(before it bounds), dx is speed and dy is angle of bounce
+// global variable coordinates for three balls where initial x is start, y is finish (before it bounds), dx is speed and dy is angle of bounce
 var x = 100;var y = 200;var dx = 5;var dy =5;
 var x_1=500;var y_1=300;var dx_1=5;var dy_1=5;
 var x_2=200;var y_2=500;var dx_2=5;var dy_2=5;
+var x_3=300;var y_3=100;var dx_3=5;var dy_3=5;
 
 // function to iniatiate the drawing of circle.
 function init() {
@@ -27,15 +27,19 @@ function draw() {
   context.beginPath();
   context.arc(x_2,y_2,30,0,Math.PI*2,false);
   context.fill();
+  context.beginPath();
+  context.arc(x_3,y_3,40,0,Math.PI*2,false);
+  context.fill();
   context.closePath();
 
   boundaryLogic();
 }
 
-// Boundary logic, check if x and y are beyond the canvas dimensions. If so, then we reverse the direction by setting values of dx and dy to the negative values.
+// Boundary logic. Check if x and y are beyond the canvas dimensions then we reverse the direction by setting values of dx and dy to the negative values.
 function boundaryLogic(){
-  if(x<0 || x>500) dx=-dx;
-  if(y<0 || y>500) dy=-dy;
+
+  if (x<0 || x>500) dx=-dx;
+  if (y<0 || y>500) dy=-dy;
   x+=dx;
   y+=dy;
 
@@ -48,4 +52,9 @@ function boundaryLogic(){
   if (y_2<0 || y_2>500) dy_2 = -dy_2;
   x_2 += dx_2;
   y_2 += dy_2;
+
+  if (x_3<0 || x_3>500) dx_3 = -dx_3;
+  if (y_3<0 || y_3>500) dy_3 = -dy_3;
+  x_3 += dx_3;
+  y_3 += dy_3;
 }
