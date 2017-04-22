@@ -1,20 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Bounce</title>
+
   <link rel="stylesheet" href="bounce.css">
+  <title>Bounce</title>
+  <script>
+      // shim layer with setTimeout fallback
+      window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame       ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame    ||
+                window.oRequestAnimationFrame      ||
+                window.msRequestAnimationFrame     ||
+                function( callback ){
+                  window.setTimeout(callback, 1000 / 60);
+                };
+      })();
+    </script>
 </head>
 
 <body>
-  <h2>Bounce</h2>
-  <canvas id="myCanvas" width="500" height="500"></canvas>
-  <div id="colorChange"><div>
-
-  </div>
+  <button id="button"> Click me to create some Javascript Art</button>
+  <canvas>
+  </canvas>
+  <!-- <audio src=""> -->
+  <audio>
+            <source src=""></source>
+        </audio>
+  <!-- </audio> -->
 </body>
 
 <script src="bounce.js"></script>

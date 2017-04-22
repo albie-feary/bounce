@@ -1,10 +1,47 @@
-body {
-    text-align: center;
-    font-family: sans-serif;
+
+canvas {
+  background: #fff; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(circle, #fff, #ff9800); /* Safari */
+  background: -o-radial-gradient(circle, #fff, #ff9800); /* Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(circle, #fff, #ff9800); /* Firefox 3.6 to 15 */
+  background: radial-gradient(circle, #fff, #ff9800); /* Standard syntax */
 }
 
-#myCanvas {
-    position: relative;
-    background-color: rgba(249, 28, 201, 0.05);
-    margin: 1em auto;
+button {
+  height: 150px;
+  width: 200px;
+  margin: auto;
+  margin-top: 3%;
+  margin-right: 3%;
+  margin-left: 3%;
+  padding: 20px 10px;
+  font-size: 25px;
+  font-family: sans-serif;
+  color: #ff9800;
+  background-color: #fff;
+  border: 2px solid #black;
+  text-align: center;
+  position: absolute;
+
+  cursor: pointer;
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+	transform: translatey(0px);
+	animation: float 2s ease-in-out infinite;
+}
+
+
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
 }
